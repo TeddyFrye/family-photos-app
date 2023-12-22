@@ -1,0 +1,29 @@
+body {
+    margin: 0 !important;
+    padding: 0;
+    border: 0 !important;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-image: linear-gradient(
+      to bottom,
+      #98000046,
+      rgba(27, 0, 0, 0.5)
+    ), url("../src/assets/denim.png"); /* Adjust the path as needed */
+    background-repeat: repeat;
+  }
+  
+  .root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items:center;
+  }
+  
+  #page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
