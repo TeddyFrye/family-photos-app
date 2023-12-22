@@ -1,7 +1,7 @@
 // imageData.js
 
 const loadMediaFiles = async () => {
-  const mediaModules = import.meta.glob("../assets/*.{jpg,png,mp4}");
+  const mediaModules = import.meta.glob("../assets/photos/*.{jpg,png,mp4}");
 
   const mediaPaths = await Promise.all(
     Object.values(mediaModules).map(async (resolver) => {

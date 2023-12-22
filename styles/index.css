@@ -9,7 +9,7 @@ body {
       to bottom,
       #98000046,
       rgba(27, 0, 0, 0.5)
-    ), url("../src/assets/denim.png"); /* Adjust the path as needed */
+    ), url("../src/assets/background/denim.png"); /* Adjust the path as needed */
     background-repeat: repeat;
   }
   
