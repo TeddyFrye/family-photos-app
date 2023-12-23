@@ -9,8 +9,11 @@
 }
 
 #carousel img, video {
-    width: 700px;
+    width: 100%;
+    max-width: 900px;
     height: auto;
+    max-height: 700px;
+    object-fit: cover;
     border: 20px inset rgb(178, 145, 54);
     box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.5);
     margin: 50px;
