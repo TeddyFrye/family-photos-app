@@ -11,7 +11,14 @@
     <div id="page-container">
       <div id="root"></div>
       <div id="decorations">
-        <div id="text">
+        <audio id="backgroundMusic" autoplay loop>
+          <source
+            src="src/assets/background/9convert.com - The Christmas Song Chestnuts roasting on an open fire lyrics.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+        <div id="text" onclick="toggleAudio()">
           <img
             src="/src/assets/background/merry-christmas-text1.png"
             alt="Merry Christmas"
@@ -21,5 +28,15 @@
       </div>
     </div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      function toggleAudio() {
+        const audio = document.getElementById("backgroundMusic");
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
   </body>
 </html>

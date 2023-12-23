@@ -46,6 +46,6 @@ body {
 
 
 #text img {
-
+  top: 50%;
   max-width: 100%;
 }
