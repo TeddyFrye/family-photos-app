@@ -1,7 +1,7 @@
 body {
-  margin: 0 !important;
+  margin: 0;
   padding: 0;
-  border: 0 !important;
+  border: 0;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -9,35 +9,45 @@ body {
     to bottom,
     #98000046,
     rgba(27, 0, 0, 0.5)
-  ), url("../src/assets/background/denim.png"); /* Adjust the path as needed */
+  ), url("../src/assets/background/denim.png");
   background-repeat: repeat;
 }
 
-#root {
+#page-container {
+  width: 100%; /* Ensure that page container is full width */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content:flex-start;
-  align-items:flex-start;
-  margin-bottom: 20px;
+  align-items: stretch; /* This will stretch child elements to fill the container */
 }
 
-#page-container {
+#root {
+  flex: 1; /* This will allow the #root to expand */
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex-direction: row; /* Changed from row to column for vertical layout */
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%; /* Set width to 100% to ensure it takes up all horizontal space */
+  margin-bottom: 2px;
 }
 
 #decorations {
-  position: relative; /* This will take the element out of the normal document flow */
-   z-index: 1; /* Ensure it's above other content */
-  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  margin-top: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: flex-start; 
 }
+
 
 #text img {
-  display: block; /* This can help remove bottom margin/padding on images */
-  max-width: 100%; /* Ensures image is responsive and fits its container */
+
+  max-width: 100%;
 }
-
-
-  

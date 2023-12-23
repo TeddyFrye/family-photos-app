@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { loadMediaFiles } from "./imageData";
 import "../../styles/carousel.css";
+import firstImage from "../assets/photos/first-image.jpeg";
 
 const Carousel = () => {
   const [images, setImages] = useState([]);
@@ -8,8 +9,18 @@ const Carousel = () => {
 
   useEffect(() => {
     const loadAndShuffleMedia = async () => {
-      const loadedImages = await loadMediaFiles();
+      let loadedImages = await loadMediaFiles();
+
+      // Find and remove the first image from the loaded images
+      const firstImagePath = firstImage;
+      loadedImages = loadedImages.filter((image) => image !== firstImagePath);
+
+      // Shuffle the remaining images
       const shuffledImages = shuffleArray(loadedImages);
+
+      // Unshift the first image so it's always the first in the array
+      shuffledImages.unshift(firstImagePath);
+
       setImages(shuffledImages);
     };
 
