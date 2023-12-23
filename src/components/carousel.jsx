@@ -30,11 +30,27 @@ const Carousel = () => {
     );
   };
 
+  const goToPreviousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleCarouselClick = (event) => {
+    const { clientX } = event;
+    const { offsetWidth } = event.currentTarget;
+    if (clientX > offsetWidth / 2) {
+      goToNextImage(); // If click is on the right side
+    } else {
+      goToPreviousImage(); // If click is on the left side
+    }
+  };
+
   const currentImage = images[currentImageIndex];
   const isVideo = currentImage ? currentImage.endsWith(".mp4") : false;
 
   return (
-    <section id="carousel" onClick={goToNextImage}>
+    <section id="carousel" onClick={handleCarouselClick}>
       {currentImage &&
         (isVideo ? (
           <video controls>
